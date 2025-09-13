@@ -22,6 +22,12 @@ img {
   display: block;
 }
 
+body {
+  font-family: 'Fira Sans', sans-serif;
+  color: #030a06;
+  background-color: #ebf8ed;
+}
+
 .home-page {
   font-size: 19px;
   position: relative;
