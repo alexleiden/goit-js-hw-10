@@ -1,18 +1,100 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+@import url(./1-timer.css);
+@import url(./2-snackbar.css);
+@import url(./base.css);
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+}
+
+.home-page {
+  font-size: 19px;
+  position: relative;
+  top: 40px;
+  left: 40px;
+  display: inline-block;
+  transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.home-page:hover,
+.home-page:focus {
+  color: blue;
+  transform: scale(1.4);
+}
+
+.menu-list {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu-list li > a {
+  padding: 10px;
+  display: inline-block;
+  transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-list li > a:hover,
+.menu-list li > a:focus {
+  color: blue;
+  transform: scale(1.4);
+  text-decoration: underline;
+}
+
+.menu-list-item {
+  font-size: 26px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.menu-list-item {
+  display: inline-block; /* чтобы работала трансформация */
+}
+.back-link {
+  position: relative;
+  display: inline-block;
+  padding: 4px 8px;
+  width: 100px;
+  margin-top: 32px;
+  margin-left: 30px;
+  border: 1px solid;
+  color: black;
+  text-align: center;
+  background-color: aquamarine;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 8px;
+}
+.back-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  width: 16px;
+  height: 16px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 300ms ease-in;
+  transition-property: opacity;
+  opacity: 0;
+  animation: slide 500ms linear infinite alternate-reverse both;
+  animation-play-state: paused;
+}
